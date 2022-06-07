@@ -1,0 +1,144 @@
+$main-color: #ffffff;
+$second-color: #ced4da;
+$theme-color: #159650;
+$waring-color: #fc1d2a;
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('./style/fonts/Roboto/Roboto-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('./style/fonts/Roboto/Roboto-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+ 
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: $second-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto-Regular';
+ 
+  &::after {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: $main-color;
+    opacity: 0.8;
+  }
+ 
+  .App {
+    width: 400px;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    border-top: 2px solid $theme-color;
+    background: $main-color;
+
+    h2 {
+      font-family: 'Roboto-Bold';
+      font-size: 1.7rem;
+      margin-bottom: 2px;
+    }
+
+    form{
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      div{
+        margin-bottom: 20px;
+        .error{
+          display: inline;
+          color: $waring-color;
+          font-size: .9rem;
+        }
+      }
+      input {
+        display: block;
+        width: 100%;
+        height: 46px;
+        border: 1px solid $second-color;
+        padding: 0.5rem;
+        margin-top: 2px;
+        margin-bottom: 4px;
+        &:nth-last-child(2) {
+          color: rgb(70, 70, 70);
+          background: $main-color;
+          transition: all 0.4s;
+  
+          &:hover {
+            background: #ededed;
+          }
+        }
+  
+        &:focus {
+          outline: 1px solid $main-color;
+        }
+      }
+      label{
+        vertical-align: middle;
+        font-family: 'Roboto-Bold';
+        &:last-child{
+          font-family: 'Roboto-Regular';
+        }
+      }
+      button{
+        background-color: $theme-color;
+        width: 100%;
+        height: 46px;
+        border: none;
+        color: #ffffff;
+        font-size: 1.2rem;
+        padding: .5rem;
+        margin-top: 20px;
+        &:hover {
+          opacity: .8;
+          transition: all 0.4s;
+        }
+      }
+      input[type="checkbox"]{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        margin: 0 8px 0 0;
+      }
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      font-size: 0.9rem;
+
+      li a {
+        color: #000;
+        font-family: 'Roboto-Bold';
+        text-decoration: none;
+        border-bottom: 1px solid #333;
+        transition: all 0.4s;
+
+        &:hover {
+          color: royalblue;
+          border-bottom: 1px solid royalblue;
+        }
+      }
+      li p{
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
